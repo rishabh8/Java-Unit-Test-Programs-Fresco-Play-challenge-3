@@ -38,38 +38,38 @@ import org.springframework.test.context.web.WebAppConfiguration;
 //Write annotations here
 public class AuthControllerTest {
 
-    //write necessary mockmvc objects and autowired context
-	
-    //Write your code here
-	    
-     @InjectMocks
- private AuthenticationController authenticationController;
-     @InjectMocks
- private AuthenticationCheck AuthenticationCheck;
-	    
-		@Before
-		public void setup() {
-			// Make necessary mockmvc instance
-            // Write your code here
+	// write necessary mockmvc objects and autowired context
+
+	// Write your code here
+
+	@InjectMocks
+	private AuthenticationController authenticationController;
+	@InjectMocks
+	private AuthenticationCheck AuthenticationCheck;
+
+	@Before
+	public void setup() {
+		// Make necessary mockmvc instance
+		// Write your code here
+	}
+
+	@Test
+	public void validateUser() throws Exception {
+
+		// Create test case to validate user "Dave".
+		// Write your code here
+	}
+
+	@Configuration
+	public static class TestConfiguration {
+		@Bean
+		public AuthenticationController authenticationController() {
+			return new AuthenticationController();
 		}
-		
-		
-		@Test
-		public void validateUser() throws Exception{
-			
-			// Create test case to validate user "Dave".
-			// Write your code here
+
+		@Bean
+		public AuthenticationCheck authenticationCheck() {
+			return new AuthenticationCheck();
 		}
-		
-    @Configuration
- public static class TestConfiguration {
-  @Bean
-  public AuthenticationController authenticationController() {
-   return new AuthenticationController();
-  }
-  @Bean
-  public AuthenticationCheck authenticationCheck() {
-   return new AuthenticationCheck();
-  }
- }
+	}
 }
